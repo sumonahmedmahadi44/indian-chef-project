@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   const [password, setPassword] = useState("");
@@ -7,16 +9,21 @@ function LoginForm() {
  
 
   function handlePasswordChange(event) {
-    setPassword(event.target.value);
+    
   }
 
   function handleEmailChange(event) {
-    setEmail(event.target.value);
+    
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(`Username: ${username}\nPassword: ${password}\nEmail: ${email}`);
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.Password.value;
+    setPassword(email,password);
+    console.log(email,password)
+   
     
   }
 
@@ -26,37 +33,27 @@ function LoginForm() {
         <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
           Email:
         </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={handleEmailChange}
-          required
-        />
+        <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="email" name="email" required/>
       </div>
       <div className="mb-6">
         <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
           Password:
         </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
-        />
+        <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="Password" placeholder="Password" name="Password" required/>
       </div>
       <div className="flex items-center justify-between">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
           type="submit"
         >
           Sign In
         </button>
+      </div>
+      <p className="mt-5 ">Don't Have Account? Please <Link className="ms-2 underline" to = '/register'>Register</Link></p>
+      <div className="m-10">
+      <button className="btn btn-outline btn-info w-full mt-5"> <FaGoogle className="me-2"></FaGoogle>  Google</button>
+      <br />
+<button className="btn btn-outline btn-accent w-full mt-5"> <FaGithub className="me-2"></FaGithub>Github</button>
       </div>
     </form>
   );

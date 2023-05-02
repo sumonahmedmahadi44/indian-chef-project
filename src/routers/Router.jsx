@@ -22,7 +22,7 @@ import RecipeDetails from "../Home/ChefCard/RecipeDetails";
               element: <Login></Login>
             },
             {
-              path:'/registration',
+              path:'/register',
               element: <Registration></Registration>
             },
             {
