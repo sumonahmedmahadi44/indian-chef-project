@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
+  const loggedOutuser =()=>{
+      loggedOut()
+      .then()
+      .catch(error => console.error(error))
+  }
+  const {user,loggedOut} = useContext(AuthContext);
     return (
         <div className="navbar bg-base-100  flex justify-around bg-black text-white">
   <div>
@@ -10,7 +17,10 @@ const Navbar = () => {
   <div  className="flex gap-6 text-xl">
         <Link to ='/'>Home</Link>
         <Link to='/blogs'>Blog</Link>
-        <Link to ='/login'>Login</Link>
+      
+        {
+          user ? <Link onClick={loggedOutuser} to ='/'>logOut</Link> : <Link to ='/login'>Login</Link>
+        }
     </div>
   <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">

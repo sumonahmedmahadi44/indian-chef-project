@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
+  const {user,createUser} = useContext(AuthContext)
     function handleSubmit(event) {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.Password.value;
-        setPassword(email,password);
-        console.log(email,password)
+        console.log(email,password);
+
+        createUser(email,password)
+        .then(result =>{
+          const registered = result.user
+        })
+        .catch (error => {
+          console.log(error)
+        });
+        form.reset();
        
         
       }
@@ -22,7 +32,7 @@ const Registration = () => {
           <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
             Photo Url:
           </label>
-          <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="email" name="email" required/>
+          <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="URl" name="photo" required/>
           <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
             Email:
           </label>
