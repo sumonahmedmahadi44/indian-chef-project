@@ -9,6 +9,8 @@ import Registration from "../Home/Registration/Registration";
 import Blog from "../Home/blogs/Blog";
 import RecipeDetails from "../Home/ChefCard/RecipeDetails";
 import PrivateRoute from "../Private/PrivateRoute";
+import HappyClients from "../xtrasection/HappyClients";
+import Review from "../xtrasection/Review";
   const router = createBrowserRouter([
     {
         path:'/',
@@ -29,6 +31,14 @@ import PrivateRoute from "../Private/PrivateRoute";
             {
               path: '/blogs',
               element: <Blog></Blog>
+            },
+            {
+              path: '/',
+              element: <HappyClients></HappyClients>
+            },
+            {
+              path: '/',
+              element: <Review></Review>
             },
             {
               path: '/',

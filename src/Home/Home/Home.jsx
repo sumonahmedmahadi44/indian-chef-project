@@ -1,6 +1,8 @@
 import React from 'react';
 import bgimg from '../../assets/top-view-food-frame-with-copy-space.jpg'
 import ChefCard from '../ChefCard/ChefCard';
+import HappyClients from '../../xtrasection/HappyClients';
+import Review from '../../xtrasection/Review';
 
 const Home = () => {
     return (
@@ -15,6 +17,8 @@ const Home = () => {
         
        </div>
        <ChefCard></ChefCard>
+       <HappyClients></HappyClients>
+       <Review></Review>
        </div>
     );
 };
