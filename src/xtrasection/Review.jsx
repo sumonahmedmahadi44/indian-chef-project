@@ -2,8 +2,8 @@ import React from 'react';
 
 const Review = () => {
     return (
-        <div className=' bg-green-200 p-3 w-full'>
-                <h2 className='text-center text-emerald-950 text-5xl bg-slate-400 rounded p-3'>Contact us</h2>
+        <div className=' bg-green-200 p-3 '>
+                <h2 className='text-center text-emerald-950 text-2xl md:text-5xl bg-slate-400 rounded p-3'>Contact us</h2>
                 <div className="hero min-h-screen ">
 
                     <div className="hero-content flex-col md:flex-row ">
@@ -34,7 +34,7 @@ const Review = () => {
 
                                 </div>
                                 <div className="form-control">
-                                    <textarea placeholder='Type message' name="" id="" cols="30" rows="5"></textarea>
+                                    <textarea placeholder='Type message' name="" id="" cols="15" rows="5"></textarea>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Send</button>

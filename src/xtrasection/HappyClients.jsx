@@ -2,10 +2,10 @@ import React from 'react';
 
 const HappyClients = () => {
     return (
-        <div className='my-9'>
-                <h2 className='bg-gray-400 text-white h-24 md:text-7xl text-2xl p-4 text-center border border-black border-spacing-3 w-full'>Happy Clients</h2>
+        <div className='my-9 w-full'>
+                <h2 className='bg-gray-400 text-white md:h-24 md:text-7xl text-2xl p-2 text-center border border-black '>Happy Clients</h2>
 
-                <div className='w-full grid md:grid-cols-3 mt-6 gap-10'>
+                <div className=' grid md:grid-cols-3 mt-6 gap-10'>
                     <div className="card  bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src="https://i.ibb.co/N3CW9kn/peter-john-manlapig-rw-IQAi-XNPTo-unsplash.jpg" alt="Shoes" className="rounded-xl" />
