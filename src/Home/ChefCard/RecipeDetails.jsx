@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Recipe from './Recipe';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const RecipeDetails = () => {
     const chefDetails = useLoaderData();
+    const [disable,setDisable] = useState(false)
     const {chef_name,chef_picture,years_of_experience,number_of_recipes,likes,description} = chefDetails;
   
     const handleFavBtn = ()=>{
       
       toast('added it to your Favorite list!!!!!!!!')
+      setDisable(true)
     }
 
     return (
@@ -26,7 +29,7 @@ const RecipeDetails = () => {
     <p> Number of Recipes: {number_of_recipes}</p>
     <p>{description}</p>
     <div className="card-actions justify-end">
-      <button onClick={handleFavBtn} className="btn btn-primary">Favorite</button>
+      <button onClick={handleFavBtn} disabled={disable} className="btn btn-primary">Favorite</button>
     </div>
   </div>
   </div>

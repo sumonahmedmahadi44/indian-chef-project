@@ -20,15 +20,19 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(Auth,email,password);
     };
     const signInWithGoogle = () =>{
+        setLoader(true)
         return signInWithPopup(Auth,googleProvider)
     };
     const signInWithGithub = () =>{
-        signInWithPopup(Auth,githubProvider)
+        setLoader(true)
+         return signInWithPopup(Auth,githubProvider)
     }
 
     const loggedOut = ()=>{
         return signOut(Auth)
     }
+
+
     
         useEffect(()=>{
             const unsubscribe = onAuthStateChanged(Auth,currentUser =>{

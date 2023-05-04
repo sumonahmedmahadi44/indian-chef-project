@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 function LoginForm() {
+  const [loginError,setLoginError] = useState('')
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const {user,loginUser,signInWithGoogle,signInWithGithub} = useContext(AuthContext);
@@ -18,9 +19,11 @@ function LoginForm() {
     signInWithGoogle()
     .then(result => {
       const loggedUser = result.user;
+      console.log(loggedUser)
     })
-    .catch(error => console.error(error))
-    form.reset();
+    .catch(error => console.error(error));
+    
+    
   }
 
   const  handleGithubBtn =()=> {
@@ -29,7 +32,7 @@ function LoginForm() {
       const loggedUser = result.user;
     })
     .catch(error => console.error(error))
-    form.reset();
+    
   }
 
   function handleSubmit(event) {
@@ -37,15 +40,20 @@ function LoginForm() {
     const form = event.target;
     const email = form.email.value;
     const password = form.Password.value;
-    setPassword(email,password);
+    setPassword(password);
+    setEmail(email);
     console.log(email,password)
    
     loginUser(email,password)
     .then(result => {
       const loggedUser = result.user;
-      navigate(from,{replace:true})
+      navigate(from,{replace:true});
+      setLoginError('')
     })
-    .catch(error => console.error(error))
+    .catch (error => {
+      console.log(error);
+      setLoginError(error.message)
+    });
     form.reset();
     
   }
@@ -64,6 +72,7 @@ function LoginForm() {
         </label>
         <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="Password" placeholder="Password" name="Password" required/>
       </div>
+      <p className='text-red-500 mb-5'>{loginError}</p>
       <div className="flex items-center justify-between">
        <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"

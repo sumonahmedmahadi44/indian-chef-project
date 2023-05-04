@@ -31,7 +31,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
               element: <Registration></Registration>
             },
             {
-              path: '/blogs',
+              path: '/blog',
               element: <Blog></Blog>
             },
             {

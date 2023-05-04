@@ -1,64 +1,103 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = () => {
-  const {user,createUser} = useContext(AuthContext)
-    function handleSubmit(event) {
-        event.preventDefault();
+  const { createUser, loggedOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const handleRegister = (event) => {
+        event.preventDefault()
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
-        const password = form.Password.value;
-        console.log(email,password);
+        const photo = form.photo.value;
+        const password = form.password.value;
+        console.log(name, email, photo, password);
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserData(result.user, photo)
+                loggedOut()
+                navigate('/login')
+                form.reset()
 
-        createUser(email,password)
-        .then(result =>{
-          const registered = result.user
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const updateUserData = (user, photo) => {
+        updateProfile(user, {
+            photoURL: photo
         })
-        .catch (error => {
-          console.log(error)
-        });
-        form.reset();
-       
-        
-      }
+            .then(() => {
+                console.log('user photo update');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
-        <form onSubmit={handleSubmit} className="w-full max-w-xs mx-auto m-80">
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-            UserName:
-          </label>
-          <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Username" name="username" required/>
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-            Photo Url:
-          </label>
-          <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="URl" name="photo" required/>
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-            Email:
-          </label>
-          <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="email" name="email" required/>
-        </div>
-        <div className="mb-6">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
-            Password:
-          </label>
-          <input className="shadow  border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="Password" placeholder="Password" name="Password" required/>
-        </div>
-        <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-            type="submit"
-          >
-            Registration
-          </button>
-        </div>
+      <div>
+      <div className="hero min-h-screen bg-base-200">
+          <div className="hero-content flex-col">
+              <div className="text-center lg:text-left">
+                  <h1 className="text-5xl font-bold">Register now!</h1>
+
+              </div>
+              <form onSubmit={handleRegister} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                  <div className="card-body">
+                      <div className="form-control">
+                          <label className="label">
+                              <span className="label-text">Name</span>
+                          </label>
+                          <input type="text" name='name' placeholder="name" className="input input-bordered" required/>
+                      </div>
+                      <div className="form-control">
+                          <label className="label">
+                              <span className="label-text">Email</span>
+                          </label>
+                          <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
+                      </div>
+                      <div className="form-control">
+                          <label className="label">
+                              <span className="label-text">Photo Url</span>
+                          </label>
+                          <input type="text" name='photo' placeholder="photo" className="input input-bordered" required/>
+                      </div>
+                      <div className="form-control">
+                          <label className="label">
+                              <span className="label-text">Password</span>
+                          </label>
+                          <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
+                          <label className="label">
+                              <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                          </label>
+                      </div>
+                      <div className="form-control mt-6">
+                          <button className="btn btn-primary">Register</button>
+                      </div>
+                      <div>
+                          <p><small>Already have an account? <Link to="/login">Please login</Link></small></p>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div >
+
+
+    );
+};
+
+export default Registration;
         <div className="m-10">
         <button className="btn btn-outline btn-info w-full mt-5"> <FaGoogle className="me-2"></FaGoogle>  Google</button>
         <br />
   <button className="btn btn-outline btn-accent w-full mt-5"> <FaGithub className="me-2"></FaGithub>Github</button>
         </div>
-      </form>
-    );
-};
-
-export default Registration;
