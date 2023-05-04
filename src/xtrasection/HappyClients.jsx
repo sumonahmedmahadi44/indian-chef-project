@@ -3,10 +3,10 @@ import React from 'react';
 const HappyClients = () => {
     return (
         <div className='my-9'>
-                <h2 className='bg-gray-400 text-white h-24 text-7xl text-center border border-black border-spacing-3'>Happy Clients</h2>
+                <h2 className='bg-gray-400 text-white h-24 md:text-7xl text-2xl p-4 text-center border border-black border-spacing-3'>Happy Clients</h2>
 
-                <div className=' grid md:grid-cols-3 mt-6 gap-10'>
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                <div className='w-full grid md:grid-cols-3 mt-6 gap-10'>
+                    <div className="card  bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src="https://i.ibb.co/N3CW9kn/peter-john-manlapig-rw-IQAi-XNPTo-unsplash.jpg" alt="Shoes" className="rounded-xl" />
                         </figure>
@@ -22,7 +22,7 @@ const HappyClients = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src="https://i.ibb.co/N3CW9kn/peter-john-manlapig-rw-IQAi-XNPTo-unsplash.jpg" alt="Shoes" className="rounded-xl" />
                         </figure>
@@ -37,7 +37,7 @@ const HappyClients = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card  bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
                             <img src="https://i.ibb.co/N3CW9kn/peter-john-manlapig-rw-IQAi-XNPTo-unsplash.jpg" alt="Shoes" className="rounded-xl" />
                         </figure>
