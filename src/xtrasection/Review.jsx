@@ -2,13 +2,13 @@ import React from 'react';
 
 const Review = () => {
     return (
-        <div className=' bg-green-200 p-3'>
+        <div className=' bg-green-200 p-3 w-full'>
                 <h2 className='text-center text-emerald-950 text-5xl bg-slate-400 rounded p-3'>Contact us</h2>
                 <div className="hero min-h-screen ">
 
                     <div className="hero-content flex-col md:flex-row ">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Contact now!</h1>
+                            <h1 className=" text-2xl md:text-5xl font-bold">Contact now!</h1>
                             <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi <br /> exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                             <div className="w-full  text-center md:text-left">
             

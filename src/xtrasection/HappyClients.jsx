@@ -3,7 +3,7 @@ import React from 'react';
 const HappyClients = () => {
     return (
         <div className='my-9'>
-                <h2 className='bg-gray-400 text-white h-24 md:text-7xl text-2xl p-4 text-center border border-black border-spacing-3'>Happy Clients</h2>
+                <h2 className='bg-gray-400 text-white h-24 md:text-7xl text-2xl p-4 text-center border border-black border-spacing-3 w-full'>Happy Clients</h2>
 
                 <div className='w-full grid md:grid-cols-3 mt-6 gap-10'>
                     <div className="card  bg-base-100 shadow-xl">
