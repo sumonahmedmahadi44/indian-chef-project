@@ -11,9 +11,11 @@ import RecipeDetails from "../Home/ChefCard/RecipeDetails";
 import PrivateRoute from "../Private/PrivateRoute";
 import HappyClients from "../xtrasection/HappyClients";
 import Review from "../xtrasection/Review";
+import ErrorPage from "../ErrorPage/ErrorPage";
   const router = createBrowserRouter([
     {
         path:'/',
+        errorElement:<ErrorPage></ErrorPage> ,
         element: <Main></Main>,
         children: [
             {

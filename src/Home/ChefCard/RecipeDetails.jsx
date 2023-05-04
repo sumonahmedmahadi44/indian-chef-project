@@ -1,13 +1,21 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Recipe from './Recipe';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeDetails = () => {
     const chefDetails = useLoaderData();
     const {chef_name,chef_picture,years_of_experience,number_of_recipes,likes,description} = chefDetails;
-    console.log(chefDetails)
+  
+    const handleFavBtn = ()=>{
+      
+      toast('added it to your Favorite list!!!!!!!!')
+    }
+
     return (
         <div>
+          <ToastContainer></ToastContainer>
             <div className='md:flex mb-16'>
             <div className="card w-96 h-full bg-base-100 shadow-xl me-5 mt-5 bg-slate-300">
   <figure><img className=' object-cover h-96' src={chef_picture} alt="Shoes" /></figure>
@@ -18,7 +26,7 @@ const RecipeDetails = () => {
     <p> Number of Recipes: {number_of_recipes}</p>
     <p>{description}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Favourite</button>
+      <button onClick={handleFavBtn} className="btn btn-primary">Favorite</button>
     </div>
   </div>
   </div>
