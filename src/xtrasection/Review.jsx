@@ -2,20 +2,20 @@ import React from 'react';
 
 const Review = () => {
     return (
-        <div className=' bg-green-200 p-3 '>
-                <h2 className='text-center text-emerald-950 text-2xl md:text-5xl bg-slate-400 rounded p-3'>Contact us</h2>
-                <div className="hero min-h-screen ">
+        
+                
+                <div className="hero min-h-screen bg-pink-300 ">
 
                     <div className="hero-content flex-col md:flex-row ">
                         <div className="text-center lg:text-left">
-                            <h1 className=" text-2xl md:text-5xl font-bold">Contact now!</h1>
-                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi <br /> exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                            <h1 className=" text-2xl md:text-5xl font-bold text-red-600">Contact now!</h1>
+                            <p className="py-6 font-bold">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi <br /> exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                             <div className="w-full  text-center md:text-left">
             
             
-            <p className="my-3 text-black text-sm">Email: info@example.com</p>
-            <p className="my-3 text-black text-sm">Phone: 123-321-5555</p>
-            <p className="my-3 text-black text-sm">Address: road-123,house-3/2, Gulshan , Dhaka-1212</p>
+            <p className="my-3 font-bold text-black text-sm">Email: info@example.com</p>
+            <p className="my-3 font-bold text-black text-sm">Phone: 123-321-5555</p>
+            <p className="my-3 font-bold text-black text-sm">Address: road-123, Gulshan , Dhaka-1212</p>
           </div>
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -43,7 +43,7 @@ const Review = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            
     );
 };
 

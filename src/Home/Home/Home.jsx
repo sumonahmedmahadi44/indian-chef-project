@@ -16,16 +16,16 @@ const Home = () => {
         <div><progress className="progress progress-secondary w-56" value="100" max="100"></progress></div></div>
     }
     return (
-        <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: `url("/images/stock/photo-1507358522600-9f71e620c44e.jpg")` }}>
+        <div className='container'>
+            <div className="hero min-h-screen">
                 <img className='object-cover h-full'  src={bgimg} alt="" />
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
   <div className='  text-white'>
-           <h1 className='text-7xl font-bold'>F<span className='text-red-600'>OO</span>D  <br />REPLACE BLOG</h1>
+           <h1 className='md:text-7xl text-4xl font-bold'>F<span className='text-red-600'>OO</span>D  <br />REPLACE BLOG</h1>
            <div className='mt-10 '><li className='text-2xl font-bold '>Most Complete</li>
         <li className='text-2xl font-bold'>Fastest Selling</li></div>
-        <p className='text-5xl mt-16 font-bold'>Enjoy Your M<span className='text-red-600'>E</span>al!!</p>
+        <p className='md:text-5xl text-3xl mt-16 font-bold'>Enjoy Your M<span className='text-red-600'>E</span>al!!</p>
         </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ const ChefCardView = ({chef}) => {
 
     const {chef_name,chef_picture,years_of_experience,number_of_recipes,likes,description} = chef;
     return (
-        <div className="card w-full bg-base-100 shadow-xl  mt-5 bg-slate-300">
+        <div className="card w-full bg-base-100 shadow-xl container mt-5 bg-slate-300">
           <LazyLoad threshold={0.95}  offset={300}><figure><img className=' object-cover h-full' src={chef_picture} alt="Shoes" /></figure></LazyLoad>
   <div className="card-body">
     <h2 className="card-title font-bold text-red-500 text-2xl">{chef_name}</h2>

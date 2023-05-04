@@ -2,7 +2,7 @@ import React from 'react';
 
 const HappyClients = () => {
     return (
-        <div className='my-9 w-full'>
+        <div className='my-9 w-full container'>
                 <h2 className='bg-gray-400 text-white md:h-24 md:text-7xl text-2xl p-2 text-center border border-black '>Happy Clients</h2>
 
                 <div className=' grid md:grid-cols-3 mt-6 gap-10'>
