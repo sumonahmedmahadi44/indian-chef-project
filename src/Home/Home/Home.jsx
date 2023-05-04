@@ -17,7 +17,7 @@ const Home = () => {
     }
     return (
         <div className='container'>
-            <div className="hero min-h-screen">
+            <div className="hero">
                 <img className='object-cover h-full'  src={bgimg} alt="" />
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
