@@ -5,6 +5,7 @@ import { updateProfile } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = () => {
+  const [regError,setRegError] = useState('')
   const { createUser, loggedOut } = useContext(AuthContext);
     const navigate = useNavigate();
     const handleRegister = (event) => {
@@ -23,10 +24,12 @@ const Registration = () => {
                 loggedOut()
                 navigate('/login')
                 form.reset()
+                setRegError('')
 
             })
             .catch(error => {
                 console.log(error);
+                setRegError(error.message)
             })
     }
 
@@ -80,6 +83,7 @@ const Registration = () => {
                               <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                           </label>
                       </div>
+                      <p className='text-red-500 mb-5'>{regError}</p>
                       <div className="form-control mt-6">
                           <button className="btn btn-primary">Register</button>
                       </div>
