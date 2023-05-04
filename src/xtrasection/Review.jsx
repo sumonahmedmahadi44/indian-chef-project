@@ -18,7 +18,7 @@ const Review = () => {
             <p className="my-3 font-bold text-black text-sm">Address: road-123, Gulshan , Dhaka-1212</p>
           </div>
                         </div>
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card mr-2 md:mr-0  flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">
