@@ -11,7 +11,7 @@ const Navbar = () => {
   const {user,loggedOut} = useContext(AuthContext);
 
     return (
-        <div className="navbar bg-base-100  flex justify-around bg-black text-white">
+        <div className="navbar bg-base-100  flex justify-around bg-white text-white">
   <div>
     <a className="btn btn-ghost normal-case text-3xl text-bold bg-sky-300 shadow-2xl ">In <span className='text-red-500'>d</span> ian Chef P<span className='text-red-500'>ro</span>ject</a>
   </div>
@@ -44,9 +44,9 @@ const Navbar = () => {
         }
     </div>
   <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
+        <div on className="w-10 rounded-full">
           {
-            user ? <img src={user.photoURL} alt="" /> : ''
+            user ? <img title={user.displayName} src={user.photoURL} alt="" /> : ''
           }
         </div>
       </label>

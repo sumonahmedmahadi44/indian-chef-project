@@ -19,7 +19,7 @@ const Registration = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                updateUserData(result.user, photo)
+                updateUserData(result.user, photo,name)
                 loggedOut()
                 navigate('/login')
                 form.reset()
@@ -30,9 +30,10 @@ const Registration = () => {
             })
     }
 
-    const updateUserData = (user, photo) => {
+    const updateUserData = (user, photo,name) => {
         updateProfile(user, {
-            photoURL: photo
+            photoURL: photo,
+            displayName : name
         })
             .then(() => {
                 console.log('user photo update');
