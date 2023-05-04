@@ -14,6 +14,7 @@ const Blog = () => {
       </Pdf></div>
         
             <div className='lg:mx-20 mt-10' ref={ref}>
+                <h1 className='text-5xl font-bold text-slate-800 border-dotted border-slate-300 mb-10 p-4  text-center'>Few Questions Answer!!!</h1>
                 
                 <div tabIndex="0" className="collapse collapse-arrow border border-base-300 bg-slate-400 rounded-box ">
             <div className="collapse-title text-xl font-medium">Differences between uncontrolled and controlled components?</div>
