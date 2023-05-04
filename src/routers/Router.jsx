@@ -49,7 +49,7 @@ import ErrorPage from "../ErrorPage/ErrorPage";
             {
               path: '/recipe/:id',
               element: <PrivateRoute><RecipeDetails></RecipeDetails></PrivateRoute>,
-              loader:({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+              loader:({params}) => fetch(`https://indian-chef-server-sumonahmedmahadi44.vercel.app/chefs/${params.id}`)
             }
         ]
     }

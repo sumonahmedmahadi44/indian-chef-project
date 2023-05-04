@@ -8,7 +8,7 @@ const ChefCard = () => {
    
 
    useEffect(() =>{
-    fetch('http://localhost:5000/chefs').then(res => res.json()).then(data => setChefs(data)).catch(error => console.error(error))
+    fetch('https://indian-chef-server-sumonahmedmahadi44.vercel.app/chefs').then(res => res.json()).then(data => setChefs(data)).catch(error => console.error(error))
    },[])
     return (
         <div className='grid md:grid-cols-3 gap-10 '>
